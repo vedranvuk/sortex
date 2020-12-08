@@ -20,15 +20,15 @@ import (
 //		fmt.Printf("%v", m[key])
 //  }
 func SortedKeyNames(inmap interface{}) []string {
-	mapv := reflect.ValueOf(inmap)
+	var mapv = reflect.ValueOf(inmap)
 	if !mapv.IsValid() {
 		return nil
 	}
 	if mapv.Kind() != reflect.Map {
 		return nil
 	}
-	ret := make([]string, 0, mapv.Len())
-	iter := mapv.MapRange()
+	var ret = make([]string, 0, mapv.Len())
+	var iter = mapv.MapRange()
 	for iter.Next() {
 		if iter.Key().Kind() != reflect.String {
 			return nil
