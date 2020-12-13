@@ -38,3 +38,10 @@ func SortedKeyNames(inmap interface{}) []string {
 	sort.Strings(ret)
 	return ret
 }
+
+// Strings returns a sorted copy of in slice.
+func Strings(in []string) (out []string) {
+	out = in
+	sort.Strings(out)
+	return
+}
